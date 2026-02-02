@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "strict": true,
+    "declaration": false,
+    "sourceMap": false,
+    "skipLibCheck": true,
+    "moduleResolution": "NodeNext",
+    "verbatimModuleSyntax": true
+  },
+  "include": ["src/**/*.ts"]
+}

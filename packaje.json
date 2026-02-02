@@ -1,0 +1,33 @@
+{
+  "name": "cdn-kit",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Tiny CDN URL helper (ESM + CJS + types)",
+  "license": "UNLICENSED",
+  "sideEffects": false,
+  "files": ["dist"],
+  "exports": {
+    ".": {
+      "types": "./dist/types/index.d.ts",
+      "import": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.cjs"
+    }
+  },
+  "main": "./dist/cjs/index.cjs",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/types/index.d.ts",
+  "scripts": {
+    "clean": "rm -rf dist",
+    "build:esm": "tsc -p tsconfig.esm.json",
+    "build:cjs": "tsc -p tsconfig.cjs.json && node scripts/rename-cjs.mjs",
+    "build:types": "tsc -p tsconfig.types.json",
+    "build": "npm run clean && npm run build:types && npm run build:esm && npm run build:cjs"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0"
+  }
+}
